@@ -14466,6 +14466,8 @@ GameObject:
   - component: {fileID: 5152055134719961512}
   - component: {fileID: 6491165142636443231}
   - component: {fileID: 2809576329266399043}
+  - component: {fileID: -8730065749492195505}
+  - component: {fileID: -6378499701599248485}
   m_Layer: 0
   m_Name: Fire_Orb
   m_TagString: Untagged
@@ -19295,3 +19297,31 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &-8730065749492195505
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3889121008295683796}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dce24bc13e5e5a64e89e291163d91fa7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 10
+  fireDistance: 0
+  fire_Orb: {fileID: 3889121008295683796}
+--- !u!135 &-6378499701599248485
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3889121008295683796}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.4
+  m_Center: {x: 0, y: 0, z: 0}

@@ -12,6 +12,7 @@ public class Item : ScriptableObject
         //Use the item
         
       Debug.Log("Using " + name);
+
     }
     public enum ItemType
     {

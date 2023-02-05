@@ -12,10 +12,7 @@ public class InventoryUI : MonoBehaviour
 
         slots = itemsParent.GetComponentsInChildren<InventorySlot>();
     }
-    private void Update()
-    {
-        
-    }
+    
     void UpdateUI()
     {
         for (int i = 0; i < slots.Length; i++)

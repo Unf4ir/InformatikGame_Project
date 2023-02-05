@@ -17,10 +17,7 @@ public class EnemyRedCubeTest : MonoBehaviour
     }
     public void ApplyDamage(int damage)
     {
-        if (dead)
-        {
-            return;
-        } 
+        
         this.currentHealth -= damage;
         healthbar.SetHealth(currentHealth);
 
@@ -28,6 +25,7 @@ public class EnemyRedCubeTest : MonoBehaviour
         {
             dead = true;
             Debug.Log("Dead");
+            Destroy(gameObject);
         }
     }
 
