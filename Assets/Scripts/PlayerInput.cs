@@ -10,12 +10,13 @@ public class PlayerInput : MonoBehaviour
     public int maxHealth = 100;
     [SerializeField]
     public int currentHealth;
-
     public Healthbar healthbar;
+
     private void Start()
     {
-        currentHealth = maxHealth;
-        healthbar.SetMaxHealth(maxHealth);
+        LoadPlayer();
+        healthbar.SetHealth(currentHealth);
+
     }
     private void Update()
     {
@@ -34,12 +35,16 @@ public class PlayerInput : MonoBehaviour
     }
     public void TakeDamage(int amount)
     {
+        SavePlayer();
         this.currentHealth -= amount;
 
         healthbar.SetHealth(currentHealth);
+
+        
     }
     public void Heal (int amount)
     {
+        SavePlayer();
         //check if this would be over max Health
         if(currentHealth + amount > maxHealth)
         {
@@ -51,5 +56,23 @@ public class PlayerInput : MonoBehaviour
         }
         healthbar.SetHealth(currentHealth);
     }
-    
+    public void SavePlayer()
+    {
+        SaveSystem.SavePlayer(this);
+    }
+    public void LoadPlayer()
+    {
+        PlayerData data = SaveSystem.LoadPlayer();
+
+        currentHealth = data.currentHealth;
+
+        Vector3 position;
+        position.x = data.position[0];
+        position.y = data.position[1];
+        position.z = data.position[2];
+        transform.position = position;
+
+    }
+   
+
 }

@@ -8,6 +8,13 @@ public class InventorySlot : MonoBehaviour
     public Button removeButton;
     Item item;
 
+    public Transform bulletSpawnPoint;
+    public GameObject FireballPrefab;
+    public GameObject IceballPrefab;
+    public float fireSpeed = 10f;
+
+
+    
     public void AddItem (Item newItem)
     {
         item = newItem;
@@ -31,10 +38,19 @@ public class InventorySlot : MonoBehaviour
     }
     public void UseItem()
     {
-        if(item != null)
+        if(item.name == "Protein Riegel") 
         {
-            
             item.Use();
+            var FireBall = Instantiate(FireballPrefab, bulletSpawnPoint.position, bulletSpawnPoint.rotation);
+            FireBall.GetComponent<Rigidbody>().velocity = bulletSpawnPoint.forward * fireSpeed;
         }
+        if(item.name == "Protein Injektion")
+        {
+            item.Use();
+            var IceBall = Instantiate(IceballPrefab, bulletSpawnPoint.position, bulletSpawnPoint.rotation);
+            IceBall.GetComponent<Rigidbody>().velocity = bulletSpawnPoint.forward * fireSpeed;
+         
+        }
+
     }
 }

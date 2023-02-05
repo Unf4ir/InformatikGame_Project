@@ -6,7 +6,6 @@ public class Interactable : MonoBehaviour
     public float radius = 3f;
     public GameObject _interactable;
     public GameObject _player;
-    Transform player;
     bool hasInteracted = false;
 
     private void Update()

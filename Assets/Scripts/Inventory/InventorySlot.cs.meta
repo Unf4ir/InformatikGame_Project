@@ -3,7 +3,11 @@ guid: f39ae296b786f344e8a2c93dcef31f08
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - icon: {instanceID: 0}
+  - removeButton: {instanceID: 0}
+  - bulletSpawnPoint: {instanceID: 0}
+  - FireballPrefab: {fileID: 8727518380456380789, guid: bc4f1c5d1363526419781e43fdb62bba, type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

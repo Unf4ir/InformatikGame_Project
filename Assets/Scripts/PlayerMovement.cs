@@ -14,6 +14,8 @@ public class PlayerMovement : MonoBehaviour
 
     [SerializeField]
     private Camera cam;
+    
+    
     private void Awake()
     {
         _input = GetComponent<PlayerInput>();
@@ -25,16 +27,8 @@ public class PlayerMovement : MonoBehaviour
         var MovementVector =  MoveTowardTarget(targetVector);
 
         RotateTowardMovementVector(MovementVector);
+        
 
-        if (Input.GetMouseButtonDown(1)) {
-            Ray ray = cam.ScreenPointToRay(Input.mousePosition);
-            RaycastHit hit;
-
-            if(Physics.Raycast(ray,out hit, 100))
-            {
-                Interactable interactable = hit.collider.GetComponent<Interactable>();
-            }
-        }
     }
     private void RotateTowardMovementVector (Vector3 MovementVector)
     {
